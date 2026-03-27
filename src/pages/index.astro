@@ -110,59 +110,80 @@ const photoInboxEndpoint = site.photoInboxEndpoint ?? "";
     </div>
   </section>
 
-  <section id="about-preview" class="section">
-    <div class="section__head section__head--split">
-      <div>
-        <p class="eyebrow">About me</p>
-        <h2>Engineer, photographer, builder of personal tools.</h2>
-      </div>
-      <p class="section__lede">
-        I study computer engineering at the University of Waterloo and spend my free time building software that
-        feels personal and photographing the places I care about.
-      </p>
+  <section id="about-preview" class="section reveal">
+    <div class="section__head">
+      <p class="eyebrow">About me</p>
+      <h2>Artist & Engineer.</h2>
     </div>
 
     <div class="home-about">
-      <div class="home-about__portrait">
+      <div class="home-about__portrait reveal reveal--left">
         <img src="/images/portrait.jpg" alt="Portrait of Sunny Gong" loading="lazy" decoding="async" />
       </div>
       <div class="home-about__body">
-        <div class="home-panel">
+        <div class="home-panel hover-lift reveal reveal--right">
           <p>
-            I gravitate toward projects where design and engineering overlap — personal sites, media tools,
-            gallery systems, and anything that turns a messy process into something clear. Photography
-            sharpens the same instincts: composition, pacing, and attention to detail carry straight
-            into the interfaces I build.
-          </p>
-          <p>
-            This site is where both sides live together, because they genuinely inform each other.
+            Hi! I'm <strong>Sunny Gong</strong>, a University of Waterloo Computer Engineering student currently in my 2B semester.
+            I love making art with my camera and changing the world with the skills I've learned in engineering.
+            I'm a very social person, and I'd love to make friends with everyone!
           </p>
           <div class="card__actions">
             <a class="button button--primary" href="/about/">More about me</a>
-            <a class="text-link" href={galleryHref}>Browse the gallery</a>
           </div>
         </div>
-        <div class="home-panel home-panel--accent">
-          <p class="eyebrow">Right now</p>
-          <ul class="home-list">
-            <li>Studying computer engineering at the University of Waterloo.</li>
-            <li>Building out the photo site at <a class="text-link" href={galleryHref}>image.sunnygong.com</a>.</li>
-            <li>Turning project work into detailed case studies.</li>
+        <div class="home-panel home-panel--accent hover-lift reveal reveal--right" style="--reveal-delay: 0.12s">
+          <p class="eyebrow">Skills & Interests</p>
+          <ul class="chip-list">
+            <li>TypeScript</li>
+            <li>Python</li>
+            <li>Astro</li>
+            <li>React</li>
+            <li>Photography</li>
+            <li>UI/UX</li>
+            <li>Full-Stack</li>
+            <li>Sony Alpha</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="projects-preview" class="section">
+  <section id="experience-preview" class="section reveal">
+    <div class="section__head">
+      <p class="eyebrow">Experience</p>
+      <h2>Where I've worked.</h2>
+    </div>
+    <div class="grid grid--cards">
+      <a class="stat-card hover-lift experience-card" href="/about/#experience-netint">
+        <p class="eyebrow">Sep – Dec 2025</p>
+        <strong>Firmware Test Engineer</strong>
+        <p class="experience-card__company">NETINT Technologies &middot; Burnaby, BC</p>
+        <p>Optimized VPU firmware test suites with parallel execution, architected Jenkins CI/CD pipelines on Kubernetes, and built cross-platform validation frameworks in C++ and Python.</p>
+      </a>
+      <a class="stat-card hover-lift experience-card" href="/about/#experience-platinum">
+        <p class="eyebrow">Jan – Apr 2025</p>
+        <strong>Website & Media Designer</strong>
+        <p class="experience-card__company">Platinum Roofing and Exteriors &middot; Remote</p>
+        <p>Led SEO strategy driving 25% traffic growth and deployed responsive web platforms with performance optimizations that cut page load times by 20%.</p>
+      </a>
+      <a class="stat-card hover-lift experience-card" href="/about/#experience-english-expansion">
+        <p class="eyebrow">Feb 2023</p>
+        <strong>Software Developer</strong>
+        <p class="experience-card__company">English Expansion &middot; Port Coquitlam, BC</p>
+        <p>Built a JavaScript automation tool for receipt generation, eliminating manual data entry and saving 2+ hours of administrative work monthly.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="projects-preview" class="section reveal">
     <div class="section__head section__head--split">
       <div>
         <p class="eyebrow">Latest Projects</p>
-        <h2>The projects I've made in the meantime of school.</h2>
+        <h2>Selected work.</h2>
       </div>
       <p class="section__lede">
-        Applications, websites, and small tools I built whenever an idea kept bothering me enough to make it real. Some
-        help me, some are meant for other people too, and most of them taught me something useful along the way.
+        Full-stack applications, developer tools, and creative platforms — built to solve real problems
+        and shipped alongside coursework. Each one taught me something the classroom didn't.
       </p>
     </div>
     <div class="grid grid--cards">
@@ -178,15 +199,15 @@ const photoInboxEndpoint = site.photoInboxEndpoint ?? "";
     </div>
   </section>
 
-  <section id="gallery-preview" class="section">
+  <section id="gallery-preview" class="section reveal">
     <div class="section__head section__head--split">
       <div>
         <p class="eyebrow">Gallery preview</p>
-        <h2>The image page works again.</h2>
+        <h2>Through the lens.</h2>
       </div>
       <p class="section__lede">
-        The old gallery mood is still here, and the fuller photo experience is now being spun out to{" "}
-        <a class="text-link" href={galleryHref}>image.sunnygong.com</a> while it is under development.
+        A curated selection of recent work — landscapes, portraits, and street scenes. The full gallery lives at{" "}
+        <a class="text-link" href={galleryHref}>image.sunnygong.com</a>.
       </p>
     </div>
     <div class="grid grid--cards">

@@ -72,8 +72,8 @@ export const site = {
     },
     {
       label: "GitHub",
-      href: maybeUrl("GitHub"),
-      note: "Add your public GitHub URL in src/data/site.ts to surface it here.",
+      href: maybeUrl("GitHub", "https://github.com/sunnygong4/"),
+      note: "github.com/sunnygong4",
     },
     {
       label: "LinkedIn",
@@ -82,9 +82,10 @@ export const site = {
     },
   ],
   projectLinks: {
-    "photography-portfolio-website":
-      maybeUrl("Photography Portfolio Website", "https://image.sunnygong.com") ?? "https://image.sunnygong.com",
-    "gigapixel-viewer": maybeUrl("Gigapixel Viewer"),
+    "sd-mover":
+      maybeUrl("SD Mover", "https://github.com/sunnygong4/sd_mover") ?? "https://github.com/sunnygong4/sd_mover",
+    "gigapixel-viewer":
+      maybeUrl("Gigapixel Viewer", "https://github.com/sunnygong4/gigapixel") ?? "https://github.com/sunnygong4/gigapixel",
     "nas-cloud-drive":
       maybeUrl("Personal Cloud Storage Platform", "https://drive.sunnygong.com") ?? "https://drive.sunnygong.com",
   },

@@ -175,34 +175,35 @@ export const photos: Photo[] = [
 
 export const projects: Project[] = [
   {
-    slug: "photography-portfolio-website",
-    title: "Photography Portfolio Website",
+    slug: "sd-mover",
+    title: "SD Mover",
     summary:
-      "Built image.sunnygong.com as a full-stack photography platform with searchable galleries, admin tooling, and an AI-assisted curation workflow that makes the archive easier to manage.",
+      "A desktop utility that automates the transfer and organization of photos and videos from SD cards, with format-based sorting, duplicate detection, and configurable destination mapping.",
     featured: true,
     kind: "case-study",
-    status: "In progress",
-    stack: ["Next.js", "TypeScript", "Node.js", "SQLite", "Immich API", "Docker"],
-    hero: ensurePublicAsset("photography-portfolio-website hero", "/images/LandscapeThumbnail.jpg"),
+    status: "Active",
+    stack: ["Python", "Tkinter", "File I/O", "Hashing"],
+    hero: ensurePublicAsset("sd-mover hero", "/images/SdMoverMain.png"),
+    repo: "https://github.com/sunnygong4/sd_mover",
     relatedPosts: [],
-    relatedPhotos: ["meadow-daisies", "orchard-light", "garden-visitor", "peeking-cat"],
+    relatedPhotos: [],
     body: [
       {
-        title: "Platform overview",
+        title: "Why I built it",
         paragraphs: [
-          "This project started when the old gallery setup stopped matching the scale of the photo work. I wanted something that could feel like a real archive instead of a folder of uploads wearing a theme.",
-          "The result is a photography platform with searchable collections, metadata-aware publishing, and a cleaner path from raw imports to a public-facing gallery.",
+          "After every shoot, manually sorting hundreds of files from an SD card into the right folders was tedious and error-prone. I wanted a single tool that could handle the entire import workflow automatically.",
+          "SD Mover detects connected cards, sorts files by type and date, skips duplicates, and drops everything into the right directory structure without manual intervention.",
         ],
       },
       {
-        title: "What I built",
+        title: "How it works",
         paragraphs: [
-          "The deeper work lives behind the gallery pages. A Node and SQLite backend handles metadata and visibility state, while the admin side keeps publishing and curation from turning into repetitive manual cleanup.",
+          "The tool uses hash-based duplicate detection and configurable rules to route files into organized folder hierarchies, with a simple Tkinter GUI for monitoring progress.",
         ],
         bullets: [
-          "searchable galleries with structured metadata and collection views",
-          "admin tooling for visibility, captions, and archive management",
-          "an AI-assisted curation flow for sorting large photo imports before they go public",
+          "automatic SD card detection and format-based file routing",
+          "SHA-256 duplicate detection to prevent redundant copies",
+          "configurable destination mapping for photos, videos, and raw files",
         ],
       },
     ],
@@ -216,7 +217,8 @@ export const projects: Project[] = [
     kind: "case-study",
     status: "Active build",
     stack: ["React", "FastAPI", "PostgreSQL", "yt-dlp", "FFmpeg", "Docker"],
-    hero: ensurePublicAsset("yoinker-personal-cloud-media-platform hero", "/images/hero1.jpg"),
+    hero: ensurePublicAsset("yoinker-personal-cloud-media-platform hero", "/images/YoinkerMain.png"),
+    repo: "https://github.com/sunnygong4/yoink",
     relatedPosts: [],
     relatedPhotos: ["neon-corridor", "peeking-cat"],
     body: [
@@ -249,7 +251,8 @@ export const projects: Project[] = [
     kind: "case-study",
     status: "Actively expanding",
     stack: ["JavaScript", "OpenSeadragon", "Python", "Tkinter", "pyvips"],
-    hero: ensurePublicAsset("gigapixel-viewer hero", "/images/LandscapeThumbnail.jpg"),
+    hero: ensurePublicAsset("gigapixel-viewer hero", "/images/GigaMain.png"),
+    repo: "https://github.com/sunnygong4/gigapixel",
     relatedPosts: ["planning-a-viewer-for-the-really-big-images"],
     relatedPhotos: ["meadow-daisies", "red-brick-clocktower"],
     body: [

@@ -28,6 +28,7 @@ const thumbnail = thumbnailFor(project.hero);
     </ul>
     <div class="card__actions">
       <a class="button button--secondary" href={detailHref}>{detailLabel}</a>
+      {project.repo && <a class="text-link" href={project.repo} target="_blank" rel="noreferrer">GitHub</a>}
       {publicHref && <a class="text-link" href={publicHref}>Open project site</a>}
       {writeupHref && project.kind === "external-link" && <a class="text-link" href={writeupHref}>Write-up</a>}
     </div>

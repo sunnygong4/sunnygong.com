@@ -11,12 +11,12 @@ import { site } from "../data/site";
     lede="I'm Sunny Gong — a computer engineering student at the University of Waterloo who builds software, takes photographs, and believes the two disciplines sharpen each other in ways most people don't expect."
   />
 
-  <section class="section">
+  <section class="section reveal">
     <div class="about-hero-split">
-      <div class="about-portrait-wrap">
+      <div class="about-portrait-wrap reveal reveal--left">
         <img src="/images/portrait.jpg" alt="Portrait of Sunny Gong" loading="eager" decoding="async" class="about-portrait" />
       </div>
-      <div class="about-intro-body">
+      <div class="about-intro-body reveal reveal--right">
         <div class="section__head">
           <p class="eyebrow">Who I am</p>
           <h2>Engineer by training, photographer by instinct</h2>
@@ -39,34 +39,121 @@ import { site } from "../data/site";
     </div>
   </section>
 
-  <section class="section">
+  <section class="section reveal">
     <div class="section__head">
       <p class="eyebrow">What drives me</p>
       <h2>The kind of work I keep coming back to</h2>
     </div>
     <div class="grid grid--cards">
-      <article class="stat-card">
+      <article class="stat-card hover-lift">
         <strong>Systems thinking</strong>
         <p>I like building software that is reliable under the hood and effortless on the surface — clean APIs, clear data flow, and interfaces that stay out of the way.</p>
       </article>
-      <article class="stat-card">
+      <article class="stat-card hover-lift">
         <strong>Personal tools</strong>
         <p>My best projects start as tools I need myself: a gallery system, a cloud drive, a portfolio that actually represents how I work. If it solves my problem well, it usually helps someone else too.</p>
       </article>
-      <article class="stat-card">
+      <article class="stat-card hover-lift">
         <strong>Visual attention</strong>
         <p>Photography trains me to notice light, space, and small details. That patience carries directly into UI work, page layout, and knowing when something is almost right but not quite.</p>
       </article>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section reveal">
+    <div class="section__head">
+      <p class="eyebrow">Experience</p>
+      <h2>Professional work</h2>
+    </div>
+
+    <article class="experience-detail" id="experience-netint">
+      <div class="experience-detail__header">
+        <div>
+          <h3>Firmware Test Engineer</h3>
+          <p class="experience-detail__company">NETINT Technologies &middot; Burnaby, BC</p>
+        </div>
+        <p class="experience-detail__date">Sep – Dec 2025</p>
+      </div>
+      <div class="prose">
+        <p>
+          Worked on VPU firmware validation at NETINT, a video processing semiconductor company.
+          Focused on test automation, CI/CD infrastructure, and cross-platform tooling for the global QA team.
+        </p>
+        <ul>
+          <li>Refactored Python-based regression suites and implemented parallel execution, reducing end-to-end test latency by 40% while maintaining full coverage across 50+ edge cases.</li>
+          <li>Architected a scalable Jenkins CI/CD pipeline integrated with Kubernetes to manage 20+ heterogeneous servers, automating environment provisioning and load balancing.</li>
+          <li>Developed a cross-platform GStreamer validation framework on Windows using C++ and Python, enabling standardized benchmarking of hardware-accelerated transcoding.</li>
+          <li>Used Claude Code for rapid root-cause analysis and script refactoring, accelerating average ticket resolution time by 30%.</li>
+        </ul>
+      </div>
+      <ul class="chip-list">
+        <li>Python</li>
+        <li>C++</li>
+        <li>Jenkins</li>
+        <li>Kubernetes</li>
+        <li>Docker</li>
+        <li>GStreamer</li>
+      </ul>
+    </article>
+
+    <article class="experience-detail" id="experience-platinum">
+      <div class="experience-detail__header">
+        <div>
+          <h3>Website & Media Designer</h3>
+          <p class="experience-detail__company">Platinum Roofing and Exteriors &middot; Remote / Waterloo, ON</p>
+        </div>
+        <p class="experience-detail__date">Jan – Apr 2025</p>
+      </div>
+      <div class="prose">
+        <p>
+          Led digital strategy and web development for a roofing and exteriors company,
+          focusing on SEO, performance, and responsive design to drive business growth.
+        </p>
+        <ul>
+          <li>Spearheaded data-driven SEO and digital footprint strategies, driving a 25% increase in web traffic.</li>
+          <li>Deployed and maintained responsive client web platforms with asset compression and performance optimizations, reducing page load times by 20%.</li>
+        </ul>
+      </div>
+      <ul class="chip-list">
+        <li>HTML/CSS</li>
+        <li>JavaScript</li>
+        <li>SEO</li>
+        <li>Web Performance</li>
+      </ul>
+    </article>
+
+    <article class="experience-detail" id="experience-english-expansion">
+      <div class="experience-detail__header">
+        <div>
+          <h3>Software Developer</h3>
+          <p class="experience-detail__company">English Expansion &middot; Port Coquitlam, BC</p>
+        </div>
+        <p class="experience-detail__date">Feb 2023</p>
+      </div>
+      <div class="prose">
+        <p>
+          Built internal tooling to automate administrative workflows at an English language education company.
+        </p>
+        <ul>
+          <li>Engineered a JavaScript automation tool to generate receipts, eliminating manual data entry and ensuring 100% billing accuracy.</li>
+          <li>Streamlined invoicing workflows, reducing manual administrative time by 2+ hours monthly and preventing all billing discrepancies.</li>
+        </ul>
+      </div>
+      <ul class="chip-list">
+        <li>JavaScript</li>
+        <li>Automation</li>
+        <li>Node.js</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="section reveal">
     <div class="section__head">
       <p class="eyebrow">Background</p>
       <h2>A few things worth knowing</h2>
     </div>
     <div class="home-split">
-      <div class="home-panel">
+      <div class="home-panel hover-lift">
         <div class="prose">
           <p>
             I'm currently studying computer engineering at the University of Waterloo. Outside of coursework I
@@ -81,7 +168,7 @@ import { site } from "../data/site";
           </p>
         </div>
       </div>
-      <div class="home-panel home-panel--accent">
+      <div class="home-panel home-panel--accent hover-lift">
         <p class="eyebrow">Quick facts</p>
         <ul class="home-list">
           <li>Computer Engineering, University of Waterloo</li>
@@ -94,7 +181,7 @@ import { site } from "../data/site";
     </div>
   </section>
 
-  <section class="section">
+  <section class="section reveal">
     <div class="section__head section__head--split">
       <div>
         <p class="eyebrow">Contact</p>
