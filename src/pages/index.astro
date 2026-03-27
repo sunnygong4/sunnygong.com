@@ -58,12 +58,12 @@ const photoInboxEndpoint = site.photoInboxEndpoint ?? "";
 ---
 
 <BaseLayout pageClass="page-home">
-  <section class="legacy-hero" style={`--hero-image: url('${thumbnailFor(site.heroImage)}')`}>
-    <div class="shell legacy-hero__content">
-      <button class="legacy-hero__logo-button" type="button" data-polaroid-trigger aria-haspopup="dialog">
-        <img class="legacy-hero__logo" src={site.logo} alt={`${site.name} logo`} loading="eager" decoding="async" />
+  <section class="hero" style={`--hero-image: url('${thumbnailFor(site.heroImage)}')`}>
+    <div class="shell hero__content">
+      <button class="hero__logo-button" type="button" data-polaroid-trigger aria-haspopup="dialog">
+        <img class="hero__logo" src={site.logo} alt={`${site.name} logo`} loading="eager" decoding="async" />
       </button>
-      <div class="legacy-hero__text">
+      <div class="hero__text">
         <h1 class="typewriter-text">
           <span data-typed-text></span><span class="cursor" aria-hidden="true">|</span>
         </h1>
@@ -114,32 +114,42 @@ const photoInboxEndpoint = site.photoInboxEndpoint ?? "";
     <div class="section__head section__head--split">
       <div>
         <p class="eyebrow">About me</p>
-        <h2>Computer engineering, photography, and personal tools all live here.</h2>
+        <h2>Engineer, photographer, builder of personal tools.</h2>
       </div>
       <p class="section__lede">
-        I want the first page to feel simple, but still say something real about how I work and why the software and photo
-        sides of the site belong together.
+        I study computer engineering at the University of Waterloo and spend my free time building software that
+        feels personal and photographing the places I care about.
       </p>
     </div>
 
-    <div class="home-split">
-      <div class="home-panel">
-        <p>
-          I am a computer engineering student who likes building useful tools, personal sites, and interfaces that feel
-          thoughtful instead of generic.
-        </p>
-        <p>
-          Photography stays here because composition, pacing, and noticing small details shape how I build software more
-          than I expected. It is a different medium, but it sharpens the same instincts.
-        </p>
+    <div class="home-about">
+      <div class="home-about__portrait">
+        <img src="/images/portrait.jpg" alt="Portrait of Sunny Gong" loading="lazy" decoding="async" />
       </div>
-      <div class="home-panel home-panel--accent">
-        <p class="eyebrow">Right now</p>
-        <ul class="home-list">
-          <li>Turning portfolio pieces into clearer case studies.</li>
-          <li>Building out the photo site at <a class="text-link" href={galleryHref}>image.sunnygong.com</a>.</li>
-          <li>Keeping the site personal without making it harder to browse.</li>
-        </ul>
+      <div class="home-about__body">
+        <div class="home-panel">
+          <p>
+            I gravitate toward projects where design and engineering overlap — personal sites, media tools,
+            gallery systems, and anything that turns a messy process into something clear. Photography
+            sharpens the same instincts: composition, pacing, and attention to detail carry straight
+            into the interfaces I build.
+          </p>
+          <p>
+            This site is where both sides live together, because they genuinely inform each other.
+          </p>
+          <div class="card__actions">
+            <a class="button button--primary" href="/about/">More about me</a>
+            <a class="text-link" href={galleryHref}>Browse the gallery</a>
+          </div>
+        </div>
+        <div class="home-panel home-panel--accent">
+          <p class="eyebrow">Right now</p>
+          <ul class="home-list">
+            <li>Studying computer engineering at the University of Waterloo.</li>
+            <li>Building out the photo site at <a class="text-link" href={galleryHref}>image.sunnygong.com</a>.</li>
+            <li>Turning project work into detailed case studies.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
