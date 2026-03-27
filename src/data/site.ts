@@ -42,7 +42,7 @@ export const site = {
   title: "Sunny Gong | Portfolio and Gallery",
   tagline: "A personal site for projects, photography, and the small experiments that still deserve a page.",
   description:
-    "A lighter personal portfolio for Sunny Gong with a restored legacy-inspired design, working gallery, and project write-ups.",
+    "A personal portfolio for Sunny Gong featuring project write-ups, photography, and the tools built along the way.",
   email: personalEmail,
   location: "Waterloo, Ontario",
   copyrightYear: 2026,
@@ -63,7 +63,7 @@ export const site = {
     wechat: "sunny060214",
   },
   availability:
-    "Built to keep the personality of the old site while making the work easier to browse, share, and keep up to date.",
+    "Built to make the work easier to browse, share, and keep up to date while keeping the personality intact.",
   socials: [
     {
       label: "Instagram",

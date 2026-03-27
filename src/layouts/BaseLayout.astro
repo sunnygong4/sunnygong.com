@@ -47,7 +47,7 @@ const themeColor = "#101827";
     <script is:inline>
       const header = document.querySelector(".site-header");
       const isHomePage = document.body.classList.contains("page-home");
-      const hero = isHomePage ? document.querySelector(".legacy-hero") : null;
+      const hero = isHomePage ? document.querySelector(".hero") : null;
 
       if (header) {
         const syncHeader = () => {

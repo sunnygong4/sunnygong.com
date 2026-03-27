@@ -4,48 +4,93 @@ import PageIntro from "../components/PageIntro.astro";
 import { site } from "../data/site";
 ---
 
-<BaseLayout title="About" description="About Sunny Gong and the thinking behind this portfolio.">
+<BaseLayout title="About" description="About Sunny Gong — computer engineering student, photographer, and builder of personal tools.">
   <PageIntro
     eyebrow="About"
-    title="Computer engineering, personal tools, and photography in one place"
-    lede="I like building things that are useful, clear, and still a little personal. This site is where the software work, the photos, and the thinking behind them can live together without pretending they are separate interests."
+    title="The longer version"
+    lede="I'm Sunny Gong — a computer engineering student at the University of Waterloo who builds software, takes photographs, and believes the two disciplines sharpen each other in ways most people don't expect."
   />
 
   <section class="section">
-    <div class="section__head">
-      <p class="eyebrow">Why this site exists</p>
-      <h2>More context than a resume can hold</h2>
-    </div>
-    <div class="prose">
-      <p>
-        I wanted one place that could show how I think, not just what I have touched. That means project write-ups,
-        smaller experiments, and photography all share the same space because they genuinely inform each other.
-      </p>
-      <p>
-        Computer engineering gives me the systems mindset. Photography gives me patience, framing, and attention to
-        detail. Together they shape how I build interfaces and how I explain the work behind them.
-      </p>
+    <div class="about-hero-split">
+      <div class="about-portrait-wrap">
+        <img src="/images/portrait.jpg" alt="Portrait of Sunny Gong" loading="eager" decoding="async" class="about-portrait" />
+      </div>
+      <div class="about-intro-body">
+        <div class="section__head">
+          <p class="eyebrow">Who I am</p>
+          <h2>Engineer by training, photographer by instinct</h2>
+        </div>
+        <div class="prose">
+          <p>
+            I grew up curious about how things work and ended up studying computer engineering because it sits
+            right at the intersection of hardware and software — where ideas become real systems. At Waterloo
+            I've built everything from RISC-V emulators to full-stack media platforms, but I'm most drawn to
+            projects where the interface matters as much as the architecture underneath.
+          </p>
+          <p>
+            Photography came later, but it stuck. What started as weekend walks with a camera turned into a
+            genuine practice — landscape, portrait, street, and everything in between. Framing a scene and
+            designing a screen use the same eye for composition, hierarchy, and timing. I keep both on one
+            site because separating them would be dishonest about how I actually think.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="section__head">
-      <p class="eyebrow">What I care about</p>
+      <p class="eyebrow">What drives me</p>
       <h2>The kind of work I keep coming back to</h2>
     </div>
     <div class="grid grid--cards">
       <article class="stat-card">
-        <strong>Clear systems</strong>
-        <p>I like software that is dependable underneath and easy to move through on the surface.</p>
+        <strong>Systems thinking</strong>
+        <p>I like building software that is reliable under the hood and effortless on the surface — clean APIs, clear data flow, and interfaces that stay out of the way.</p>
       </article>
       <article class="stat-card">
-        <strong>Personal interfaces</strong>
-        <p>I care about tools and sites that feel intentional instead of interchangeable or overly polished.</p>
+        <strong>Personal tools</strong>
+        <p>My best projects start as tools I need myself: a gallery system, a cloud drive, a portfolio that actually represents how I work. If it solves my problem well, it usually helps someone else too.</p>
       </article>
       <article class="stat-card">
-        <strong>Observation</strong>
-        <p>Photography keeps teaching me pacing, composition, and detail, and that carries directly into product work.</p>
+        <strong>Visual attention</strong>
+        <p>Photography trains me to notice light, space, and small details. That patience carries directly into UI work, page layout, and knowing when something is almost right but not quite.</p>
       </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">Background</p>
+      <h2>A few things worth knowing</h2>
+    </div>
+    <div class="home-split">
+      <div class="home-panel">
+        <div class="prose">
+          <p>
+            I'm currently studying computer engineering at the University of Waterloo. Outside of coursework I
+            spend most of my time on side projects — building out my photography platform at
+            <a class="text-link" href={site.gallerySite}>image.sunnygong.com</a>, maintaining this portfolio,
+            and experimenting with media tools and infrastructure.
+          </p>
+          <p>
+            I work across the stack but lean toward frontend and systems-level projects. My go-to tools are
+            TypeScript, Astro, React, and Python, though I'll pick up whatever the problem needs. I care more
+            about shipping something real than about the framework it runs on.
+          </p>
+        </div>
+      </div>
+      <div class="home-panel home-panel--accent">
+        <p class="eyebrow">Quick facts</p>
+        <ul class="home-list">
+          <li>Computer Engineering, University of Waterloo</li>
+          <li>Based in Waterloo, Ontario</li>
+          <li>Shooting with Sony &amp; vintage glass</li>
+          <li>Building <a class="text-link" href={site.gallerySite}>image.sunnygong.com</a> and <a class="text-link" href={site.blogSite}>blog.sunnygong.com</a></li>
+          <li>Always looking for the next side project</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -53,27 +98,25 @@ import { site } from "../data/site";
     <div class="section__head section__head--split">
       <div>
         <p class="eyebrow">Contact</p>
-        <h2>The easiest ways to reach me</h2>
+        <h2>Let's connect</h2>
       </div>
       <p class="section__lede">
-        Email is still the best first contact if you want the resume version, project context, or just the longer story
-        behind the work.
+        Whether you want the resume version, project context, or just want to talk shop — I'm always happy to hear from people.
       </p>
     </div>
 
     <div class="home-split">
       <div class="home-panel">
-        <p>
-          I am still turning projects into clearer case studies, keeping this site current, and building out the photo
-          side at <a class="text-link" href={site.gallerySite}>image.sunnygong.com</a>.
-        </p>
-        <p>
-          The best way to start is my personal email. If school context or public profiles make more sense, those are
-          here too.
-        </p>
+        <div class="prose">
+          <p>
+            Email is the most reliable way to reach me. If you're from a university or professional context,
+            my school address works too. I'm also active on LinkedIn and Instagram.
+          </p>
+        </div>
         <div class="card__actions">
-          <a class="button button--secondary" href={`mailto:${site.email}`}>Email {site.name}</a>
-          <a class="text-link" href={site.contact.linkedin}>LinkedIn</a>
+          <a class="button button--primary" href={`mailto:${site.email}`}>Send me an email</a>
+          <a class="button button--secondary" href={site.contact.linkedin}>LinkedIn profile</a>
+          <a class="text-link" href={site.contact.instagramUrl}>@{site.contact.instagramHandle}</a>
         </div>
       </div>
 
