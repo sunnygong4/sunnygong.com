@@ -1,0 +1,62 @@
+﻿---
+import PageIntro from "../../components/PageIntro.astro";
+import PhotoCard from "../../components/PhotoCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { photos } from "../../data/content";
+
+const byTitle = (a, b) => a.title.localeCompare(b.title);
+const orderedPhotos = [...photos].sort((a, b) => Number(b.featured) - Number(a.featured) || byTitle(a, b));
+const collectionMap = new Map();
+
+for (const photo of orderedPhotos) {
+  const bucket = collectionMap.get(photo.collection) ?? [];
+  bucket.push(photo);
+  collectionMap.set(photo.collection, bucket);
+}
+
+const toAnchor = (value) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
+const collections = Array.from(collectionMap.entries()).map(([title, items]) => ({
+  title,
+  anchor: toAnchor(title),
+  lede: items[0].blurb,
+  items,
+}));
+---
+
+<BaseLayout title="Gallery" description="Photography archive for Sunny Gong.">
+  <PageIntro
+    eyebrow="Gallery"
+    title="The photo archive, minus the broken prototype"
+    lede="The old gallery feel is still here, but now it is a simple static page that loads fast and opens the full frames when you want them."
+  />
+
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">Collections</p>
+      <h2>Move through the photos by collection</h2>
+    </div>
+    <nav class="collection-nav" aria-label="Photo collections">
+      {collections.map((collection) => <a href={`#${collection.anchor}`}>{collection.title}</a>)}
+    </nav>
+  </section>
+
+  {
+    collections.map((collection) => (
+      <section class="section collection-group" id={collection.anchor}>
+        <div class="collection-group__head">
+          <p class="eyebrow">Collection</p>
+          <h2>{collection.title}</h2>
+          <p class="collection-group__lede">{collection.lede}</p>
+        </div>
+        <div class="grid grid--cards">
+          {collection.items.map((photo) => <PhotoCard photo={photo} />)}
+        </div>
+      </section>
+    ))
+  }
+</BaseLayout>

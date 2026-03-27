@@ -1,0 +1,455 @@
+---
+import PhotoCard from "../components/PhotoCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { photos, posts, projects } from "../data/content";
+import { thumbnailFor } from "../data/images";
+import { getProjectLink, site, socialLinks } from "../data/site";
+const featuredPhotos = photos.filter((photo) => photo.featured).slice(0, 4);
+const featuredProjects = projects.filter((project) => project.featured).slice(0, 3);
+const postsById = new Map(posts.map((post) => [post.slug, post]));
+const galleryHref = site.gallerySite;
+const instagramLink = socialLinks.find((item) => item.label === "Instagram")?.href;
+const dreamerHref = instagramLink ?? "/about/";
+const dreamerTarget = instagramLink ? "_blank" : undefined;
+const dreamerRel = instagramLink ? "noreferrer" : undefined;
+
+const getWriteupHref = (project) => {
+  const related = project.relatedPosts[0];
+  const post = related ? postsById.get(related) : undefined;
+  return post ? `/writing/${post.slug}/` : undefined;
+};
+
+const polaroidSeed = featuredPhotos[0] ?? photos[0];
+const polaroidPool = featuredPhotos.map((photo) => ({
+  title: photo.title,
+  note: photo.note,
+  image: thumbnailFor(photo.image),
+  full: photo.image,
+  alt: photo.alt,
+}));
+const creativeBriefPool = [
+  {
+    title: "Creative Brief 01",
+    note: "Build something small that turns an annoying everyday routine into a calm one.",
+  },
+  {
+    title: "Creative Brief 02",
+    note: "Design a page that feels like a memory first and a product second.",
+  },
+  {
+    title: "Creative Brief 03",
+    note: "Turn a messy archive into something curated enough that people want to linger.",
+  },
+  {
+    title: "Creative Brief 04",
+    note: "Make an interface for a niche obsession and keep it warm instead of clinical.",
+  },
+  {
+    title: "Creative Brief 05",
+    note: "Ship a tool that solves one real problem for you and one real problem for someone else.",
+  },
+  {
+    title: "Creative Brief 06",
+    note: "Prototype around a detail most people would ignore, then make that detail the whole point.",
+  },
+];
+const photoInboxEndpoint = site.photoInboxEndpoint ?? "";
+---
+
+<BaseLayout pageClass="page-home">
+  <section class="legacy-hero" style={`--hero-image: url('${thumbnailFor(site.heroImage)}')`}>
+    <div class="shell legacy-hero__content">
+      <button class="legacy-hero__logo-button" type="button" data-polaroid-trigger aria-haspopup="dialog">
+        <img class="legacy-hero__logo" src={site.logo} alt={`${site.name} logo`} loading="eager" decoding="async" />
+      </button>
+      <div class="legacy-hero__text">
+        <h1 class="typewriter-text">
+          <span data-typed-text></span><span class="cursor" aria-hidden="true">|</span>
+        </h1>
+        <div class="hero-links">
+          <a href="#projects-preview">Computer Engineer</a>
+          <a href={galleryHref}>Photographer</a>
+          <a href={dreamerHref} target={dreamerTarget} rel={dreamerRel}>Dreamer</a>
+        </div>
+      </div>
+    </div>
+
+    <audio data-polaroid-sound src="/audio/polaroid.mp3" preload="auto"></audio>
+
+    <div class="polaroid-modal" data-polaroid-modal hidden>
+      <div class="polaroid-drop" data-polaroid-card role="dialog" aria-modal="true" aria-labelledby="polaroid-title">
+        <button class="polaroid-modal__close" type="button" data-polaroid-close aria-label="Close photo preview">x</button>
+        <div class="polaroid-drop__shell">
+          <div class="polaroid-drop__frame">
+            <img
+              src={polaroidSeed ? thumbnailFor(polaroidSeed.image) : thumbnailFor(site.heroImage)}
+              alt=""
+              data-polaroid-image
+            />
+          </div>
+          <div class="polaroid-drop__caption">
+            <strong id="polaroid-title" data-polaroid-title>{polaroidSeed?.title ?? site.name}</strong>
+            <p data-polaroid-note>{polaroidSeed?.note ?? site.tagline}</p>
+          </div>
+        </div>
+        <div class="polaroid-drop__actions">
+          <button class="button button--secondary" type="button" data-polaroid-save>Save for Sunny</button>
+          <a
+            class="text-link"
+            href={polaroidSeed?.image ?? galleryHref}
+            data-polaroid-link
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open full frame
+          </a>
+        </div>
+        <p class="polaroid-drop__status" data-polaroid-status aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-preview" class="section">
+    <div class="section__head section__head--split">
+      <div>
+        <p class="eyebrow">About me</p>
+        <h2>Computer engineering, photography, and personal tools all live here.</h2>
+      </div>
+      <p class="section__lede">
+        I want the first page to feel simple, but still say something real about how I work and why the software and photo
+        sides of the site belong together.
+      </p>
+    </div>
+
+    <div class="home-split">
+      <div class="home-panel">
+        <p>
+          I am a computer engineering student who likes building useful tools, personal sites, and interfaces that feel
+          thoughtful instead of generic.
+        </p>
+        <p>
+          Photography stays here because composition, pacing, and noticing small details shape how I build software more
+          than I expected. It is a different medium, but it sharpens the same instincts.
+        </p>
+      </div>
+      <div class="home-panel home-panel--accent">
+        <p class="eyebrow">Right now</p>
+        <ul class="home-list">
+          <li>Turning portfolio pieces into clearer case studies.</li>
+          <li>Building out the photo site at <a class="text-link" href={galleryHref}>image.sunnygong.com</a>.</li>
+          <li>Keeping the site personal without making it harder to browse.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects-preview" class="section">
+    <div class="section__head section__head--split">
+      <div>
+        <p class="eyebrow">Latest Projects</p>
+        <h2>The projects I've made in the meantime of school.</h2>
+      </div>
+      <p class="section__lede">
+        Applications, websites, and small tools I built whenever an idea kept bothering me enough to make it real. Some
+        help me, some are meant for other people too, and most of them taught me something useful along the way.
+      </p>
+    </div>
+    <div class="grid grid--cards">
+      {
+        featuredProjects.map((project) => (
+          <ProjectCard
+            project={project}
+            publicHref={project.href ?? getProjectLink(project.slug)}
+            writeupHref={getWriteupHref(project)}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section id="gallery-preview" class="section">
+    <div class="section__head section__head--split">
+      <div>
+        <p class="eyebrow">Gallery preview</p>
+        <h2>The image page works again.</h2>
+      </div>
+      <p class="section__lede">
+        The old gallery mood is still here, and the fuller photo experience is now being spun out to{" "}
+        <a class="text-link" href={galleryHref}>image.sunnygong.com</a> while it is under development.
+      </p>
+    </div>
+    <div class="grid grid--cards">
+      {featuredPhotos.map((photo) => <PhotoCard photo={photo} compact={true} />)}
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ introText: `Hi, I'm ${site.name}`, polaroidPool, creativeBriefPool, photoInboxEndpoint }} is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const typedText = document.querySelector("[data-typed-text]");
+
+    if (typedText) {
+      typedText.textContent = "";
+      let index = 0;
+
+      const typeNext = () => {
+        typedText.textContent = introText.slice(0, index);
+        index += 1;
+
+        if (index <= introText.length) {
+          window.setTimeout(typeNext, 100);
+        }
+      };
+
+      typeNext();
+    }
+
+    const trigger = document.querySelector("[data-polaroid-trigger]");
+    const modal = document.querySelector("[data-polaroid-modal]");
+    const sound = document.querySelector("[data-polaroid-sound]");
+    const card = modal?.querySelector("[data-polaroid-card]");
+    const closeButton = modal?.querySelector("[data-polaroid-close]");
+    const image = modal?.querySelector("[data-polaroid-image]");
+    const title = modal?.querySelector("[data-polaroid-title]");
+    const note = modal?.querySelector("[data-polaroid-note]");
+    const link = modal?.querySelector("[data-polaroid-link]");
+    const saveButton = modal?.querySelector("[data-polaroid-save]");
+    const status = modal?.querySelector("[data-polaroid-status]");
+
+    if (
+      !trigger ||
+      !modal ||
+      !card ||
+      !closeButton ||
+      !image ||
+      !title ||
+      !note ||
+      !link ||
+      !saveButton ||
+      !status ||
+      polaroidPool.length === 0
+    ) {
+      return;
+    }
+
+    let currentObjectUrl = "";
+    let currentUploadBlob = null;
+    let currentFileName = "";
+    const randomFrom = (pool, fallback) => pool[Math.floor(Math.random() * pool.length)] ?? fallback;
+    const defaultBrief = {
+      title: "Creative Brief",
+      note: "Make something curious, useful, and a little more personal than it needs to be.",
+    };
+
+    const resetObjectUrl = (nextUrl = "") => {
+      if (currentObjectUrl && currentObjectUrl !== nextUrl) {
+        URL.revokeObjectURL(currentObjectUrl);
+        currentObjectUrl = "";
+      }
+    };
+
+    const setModalContent = (item) => {
+      resetObjectUrl(item.image);
+      image.src = item.image;
+      image.alt = item.alt ?? item.title;
+      title.textContent = item.title;
+      note.textContent = item.note;
+      link.href = item.full;
+      link.textContent = item.linkLabel ?? "Open full frame";
+      currentUploadBlob = item.uploadBlob ?? null;
+      currentFileName = item.fileName ?? `polaroid-${Date.now()}.jpg`;
+      status.textContent = "";
+    };
+
+    const openModal = () => {
+      modal.hidden = false;
+      document.body.classList.add("is-polaroid-open");
+      card.classList.remove("polaroid-drop--revealed");
+      void card.offsetWidth;
+      card.classList.add("polaroid-drop--revealed");
+      sound?.play?.().catch(() => {});
+    };
+
+    const closeModal = () => {
+      modal.hidden = true;
+      document.body.classList.remove("is-polaroid-open");
+      card.classList.remove("polaroid-drop--revealed");
+    };
+
+    const showFallbackPhoto = (fallbackNote) => {
+      const item = randomFrom(polaroidPool, polaroidPool[0]);
+      setModalContent({
+        ...item,
+        note: fallbackNote ? `${fallbackNote} ${item.note}` : item.note,
+      });
+      openModal();
+    };
+
+    const canvasToBlob = (canvas) =>
+      new Promise((resolve, reject) => {
+        canvas.toBlob((blob) => {
+          if (blob) {
+            resolve(blob);
+          } else {
+            reject(new Error("Could not export photo."));
+          }
+        }, "image/jpeg", 0.92);
+      });
+
+    const captureFromCamera = async () => {
+      if (!navigator.mediaDevices?.getUserMedia) {
+        showFallbackPhoto("Camera access is not available here.");
+        return;
+      }
+
+      let stream;
+
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: "user",
+            width: { ideal: 1280 },
+            height: { ideal: 1280 },
+          },
+        });
+
+        const video = document.createElement("video");
+        video.setAttribute("playsinline", "");
+        video.muted = true;
+        video.srcObject = stream;
+
+        await new Promise((resolve) => {
+          if (video.readyState >= 1) {
+            resolve();
+            return;
+          }
+
+          video.onloadedmetadata = () => resolve();
+        });
+
+        await video.play().catch(() => {});
+        await new Promise((resolve) => window.setTimeout(resolve, 450));
+
+        const canvas = document.createElement("canvas");
+        const width = video.videoWidth || 960;
+        const height = video.videoHeight || 1280;
+        const cropSize = Math.min(width, height);
+        const cropX = Math.max(0, (width - cropSize) / 2);
+        const cropY = Math.max(0, (height - cropSize) / 2);
+
+        canvas.width = 1080;
+        canvas.height = 1080;
+
+        const context = canvas.getContext("2d");
+
+        if (!context) {
+          throw new Error("Could not create camera snapshot.");
+        }
+
+        context.filter = "saturate(0.82) contrast(0.9) sepia(0.18) brightness(1.06) hue-rotate(-6deg)";
+        context.drawImage(video, cropX, cropY, cropSize, cropSize, 0, 0, 1080, 1080);
+        context.filter = "none";
+
+        context.fillStyle = "rgba(250, 232, 210, 0.11)";
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        const vignette = context.createRadialGradient(540, 540, 260, 540, 540, 760);
+        vignette.addColorStop(0, "rgba(0, 0, 0, 0)");
+        vignette.addColorStop(1, "rgba(63, 40, 18, 0.18)");
+        context.fillStyle = vignette;
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        const captureBlob = await canvasToBlob(canvas);
+        const captureUrl = URL.createObjectURL(captureBlob);
+        const creativeBrief = randomFrom(creativeBriefPool, defaultBrief);
+
+        setModalContent({
+          title: creativeBrief.title,
+          note: creativeBrief.note,
+          image: captureUrl,
+          full: captureUrl,
+          alt: "Camera snapshot from the hero logo interaction.",
+          linkLabel: "Open captured polaroid",
+          uploadBlob: captureBlob,
+          fileName: `sunny-polaroid-${Date.now()}.jpg`,
+        });
+        currentObjectUrl = captureUrl;
+
+        openModal();
+      } catch (error) {
+        console.error("Camera capture failed:", error);
+        showFallbackPhoto("Could not access the camera, so here is a site photo instead.");
+      } finally {
+        stream?.getTracks().forEach((track) => track.stop());
+      }
+    };
+
+    trigger.addEventListener("click", () => {
+      void captureFromCamera();
+    });
+
+    saveButton.addEventListener("click", async () => {
+      if (!photoInboxEndpoint) {
+        status.textContent = "Upload endpoint not configured yet.";
+        return;
+      }
+
+      try {
+        saveButton.disabled = true;
+        saveButton.textContent = "Saving...";
+
+        let uploadBlob = currentUploadBlob;
+
+        if (!uploadBlob) {
+          const response = await fetch(link.href);
+
+          if (!response.ok) {
+            throw new Error("Could not prepare the current photo for upload.");
+          }
+
+          uploadBlob = await response.blob();
+        }
+
+        const formData = new FormData();
+        formData.append("photo", uploadBlob, currentFileName || `sunny-polaroid-${Date.now()}.jpg`);
+        formData.append("title", title.textContent || "Polaroid");
+        formData.append("note", note.textContent || "");
+        formData.append("capturedAt", new Date().toISOString());
+
+        const response = await fetch(photoInboxEndpoint, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error(`Upload failed with status ${response.status}.`);
+        }
+
+        status.textContent = "Saved for Sunny.";
+      } catch (error) {
+        console.error("Photo upload failed:", error);
+        status.textContent = "Could not save to Sunny's server yet.";
+      } finally {
+        saveButton.disabled = false;
+        saveButton.textContent = "Save for Sunny";
+      }
+    });
+
+    closeButton.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !modal.hidden) {
+        closeModal();
+      }
+    });
+
+    window.addEventListener("beforeunload", resetObjectUrl);
+  });
+</script>

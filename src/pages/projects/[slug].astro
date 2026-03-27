@@ -1,0 +1,79 @@
+﻿---
+import ContentSections from "../../components/ContentSections.astro";
+import PhotoCard from "../../components/PhotoCard.astro";
+import PostCard from "../../components/PostCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { photosBySlug, postsBySlug, projects } from "../../data/content";
+import { thumbnailFor } from "../../data/images";
+import { getProjectLink } from "../../data/site";
+
+export async function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const relatedPosts = project.relatedPosts.map((slug) => postsBySlug.get(slug)).filter(Boolean);
+const relatedPhotos = project.relatedPhotos.map((slug) => photosBySlug.get(slug)).filter(Boolean);
+const publicHref = project.href ?? getProjectLink(project.slug);
+---
+
+<BaseLayout title={project.title} description={project.summary} image={project.hero}>
+  <article class="article-shell">
+    <header class="article-header">
+      <p class="eyebrow">{project.kind === "case-study" ? "Project case study" : "Linked project"}</p>
+      <h1>{project.title}</h1>
+      <p class="article-header__summary">{project.summary}</p>
+      <ul class="meta-list" aria-label="Project metadata">
+        <li>{project.status}</li>
+        {project.stack.map((item) => <li>{item}</li>)}
+      </ul>
+      <div class="card__actions">
+        <a class="button button--secondary" href="/projects/">Back to all projects</a>
+        {publicHref && <a class="text-link" href={publicHref}>Open project site</a>}
+        {project.repo && <a class="text-link" href={project.repo}>Source code</a>}
+      </div>
+      {
+        !publicHref && project.kind === "external-link" && (
+          <p class="empty-state">The public link is intentionally not exposed yet. This page stays as the public brief and write-up hub.</p>
+        )
+      }
+    </header>
+
+    <div class="article-hero">
+      <img src={thumbnailFor(project.hero)} alt="" loading="eager" decoding="async" />
+    </div>
+
+    <ContentSections sections={project.body} />
+  </article>
+
+  {
+    relatedPosts.length > 0 && (
+      <section class="section">
+        <div class="section__head">
+          <p class="eyebrow">Related writing</p>
+          <h2>Further context</h2>
+        </div>
+        <div class="grid grid--cards">
+          {relatedPosts.map((post) => post && <PostCard post={post} />)}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    relatedPhotos.length > 0 && (
+      <section class="section">
+        <div class="section__head">
+          <p class="eyebrow">Related photos</p>
+          <h2>Images connected to this project</h2>
+        </div>
+        <div class="grid grid--cards">
+          {relatedPhotos.map((photo) => photo && <PhotoCard photo={photo} compact={true} />)}
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+import FeatherNanjingIntro from "../components/FeatherNanjingIntro.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Feather Intro Demo"
+  description="A coded intro study of a feather drifting into a sketched Nanjing skyline."
+  pageClass="page-feather-demo"
+>
+  <FeatherNanjingIntro />
+</BaseLayout>
+
+<style is:global>
+  body.page-feather-demo {
+    background: #9bcaf0;
+  }
+
+  body.page-feather-demo .site-header,
+  body.page-feather-demo .site-footer,
+  body.page-feather-demo .site-bg {
+    display: none;
+  }
+
+  body.page-feather-demo main {
+    padding-bottom: 0;
+  }
+</style>

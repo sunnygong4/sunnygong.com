@@ -1,0 +1,21 @@
+﻿---
+import type { ContentSection } from "../data/content";
+
+interface Props {
+  sections: ContentSection[];
+}
+
+const { sections } = Astro.props;
+---
+
+<div class="prose">
+  {
+    sections.map((section) => (
+      <Fragment>
+        <h2>{section.title}</h2>
+        {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        {section.bullets && <ul>{section.bullets.map((bullet) => <li>{bullet}</li>)}</ul>}
+      </Fragment>
+    ))
+  }
+</div>

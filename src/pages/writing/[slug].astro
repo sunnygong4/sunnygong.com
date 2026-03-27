@@ -1,0 +1,78 @@
+﻿---
+import ContentSections from "../../components/ContentSections.astro";
+import PhotoCard from "../../components/PhotoCard.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { photosBySlug, posts, projectsBySlug } from "../../data/content";
+import { thumbnailFor } from "../../data/images";
+import { getProjectLink } from "../../data/site";
+
+export async function getStaticPaths() {
+  return posts.filter((post) => !post.draft).map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const relatedPhotos = post.relatedPhotos.map((slug) => photosBySlug.get(slug)).filter(Boolean);
+const relatedProject = post.relatedProject ? projectsBySlug.get(post.relatedProject) : undefined;
+const publishLabel = new Intl.DateTimeFormat("en-CA", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+}).format(post.publishDate);
+---
+
+<BaseLayout title={post.title} description={post.summary} image={post.hero}>
+  <article class="article-shell">
+    <header class="article-header">
+      <p class="eyebrow">{post.topic}</p>
+      <h1>{post.title}</h1>
+      <p class="article-header__summary">{post.summary}</p>
+      <ul class="meta-list" aria-label="Post metadata">
+        <li>{publishLabel}</li>
+        {relatedProject && <li>{relatedProject.title}</li>}
+      </ul>
+      <div class="card__actions">
+        <a class="button button--secondary" href="/writing/">Back to all writing</a>
+      </div>
+    </header>
+
+    <div class="article-hero">
+      <img src={thumbnailFor(post.hero)} alt="" loading="eager" decoding="async" />
+    </div>
+
+    <ContentSections sections={post.body} />
+  </article>
+
+  {
+    relatedProject && (
+      <section class="section">
+        <div class="section__head">
+          <p class="eyebrow">Related project</p>
+          <h2>Where this write-up came from</h2>
+        </div>
+        <ProjectCard
+          project={relatedProject}
+          publicHref={relatedProject.href ?? getProjectLink(relatedProject.slug)}
+          writeupHref={`/writing/${post.slug}/`}
+        />
+      </section>
+    )
+  }
+
+  {
+    relatedPhotos.length > 0 && (
+      <section class="section">
+        <div class="section__head">
+          <p class="eyebrow">Related photos</p>
+          <h2>Images mentioned in this post</h2>
+        </div>
+        <div class="grid grid--cards">
+          {relatedPhotos.map((photo) => photo && <PhotoCard photo={photo} compact={true} />)}
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>

@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "astro": "^6.0.3",
+    "sharp": "^0.34.5",
+    "typescript": "^5.9.3"
+  },
+  "name": "sunny-gong-editorial-portfolio",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "thumbnails": "node scripts/generate-thumbnails.mjs"
+  },
+  "description": "Editorial portfolio for Sunny Gong built with Astro.",
+  "type": "module"
+}

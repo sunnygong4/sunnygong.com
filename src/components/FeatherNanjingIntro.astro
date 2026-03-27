@@ -1,0 +1,741 @@
+<section class="feather-demo" data-feather-demo aria-label="Feather drifting into a sketched Nanjing skyline" data-phase="boot">
+  <a class="feather-demo__back" href="/">Back to site</a>
+
+  <div class="feather-demo__stage" data-feather-stage>
+    <div class="feather-demo__world" data-feather-world>
+      <div class="feather-demo__sun-halo"></div>
+      <div class="feather-demo__cloud feather-demo__cloud--one"></div>
+      <div class="feather-demo__cloud feather-demo__cloud--two"></div>
+      <div class="feather-demo__cloud feather-demo__cloud--three"></div>
+      <div class="feather-demo__cloud feather-demo__cloud--four"></div>
+
+      <div class="feather-demo__particles" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="feather-demo__layer feather-demo__layer--far" data-depth="0.14" data-layer="far">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="none" role="presentation">
+          <path
+            class="feather-demo__sky-glow"
+            d="M0 0H1600V420C1500 392 1398 382 1280 388C1144 396 1036 430 922 450C778 476 614 474 448 444C304 418 166 416 0 450V0Z"
+          ></path>
+          <path
+            class="feather-demo__river-band"
+            d="M0 742C156 724 288 726 418 748C576 774 730 780 888 758C1046 734 1198 728 1368 752C1454 764 1532 780 1600 800V900H0V742Z"
+          ></path>
+          <path
+            class="feather-demo__river-line"
+            d="M124 786C296 762 474 762 642 784C802 806 964 804 1128 780C1266 760 1404 760 1526 776"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="feather-demo__layer feather-demo__layer--city" data-depth="0.36" data-layer="city">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="none" role="presentation">
+          <path class="feather-demo__city-ground" d="M72 774H1530"></path>
+          <path class="feather-demo__city-ground feather-demo__city-ground--soft" d="M122 792H1472"></path>
+
+          <path class="feather-demo__city-fill" d="M96 774V660H210V626H348V660H440V774Z"></path>
+          <path class="feather-demo__city-line" d="M96 774V660H440V774"></path>
+          <path class="feather-demo__city-line" d="M80 662H456"></path>
+          <path class="feather-demo__city-line" d="M112 628H424"></path>
+          <path class="feather-demo__city-line" d="M134 598H404"></path>
+          <path class="feather-demo__city-line" d="M148 572H388"></path>
+          <path class="feather-demo__city-line" d="M158 548H378"></path>
+          <path class="feather-demo__city-line" d="M170 532H366"></path>
+          <path class="feather-demo__city-line" d="M180 516H356"></path>
+          <path class="feather-demo__city-line" d="M196 500H340"></path>
+          <path class="feather-demo__city-line" d="M196 660V774"></path>
+          <path class="feather-demo__city-line" d="M340 660V774"></path>
+          <path class="feather-demo__city-line" d="M238 660V774"></path>
+          <path class="feather-demo__city-line" d="M290 660V774"></path>
+          <path class="feather-demo__city-line" d="M148 712H388"></path>
+          <path class="feather-demo__city-line" d="M174 680H362"></path>
+          <path class="feather-demo__city-line" d="M226 560H310"></path>
+
+          <path class="feather-demo__city-wall" d="M438 774C494 744 552 738 610 752C660 764 696 766 734 756"></path>
+          <path class="feather-demo__city-wall" d="M438 774H734"></path>
+          <path class="feather-demo__city-wall" d="M470 774V744"></path>
+          <path class="feather-demo__city-wall" d="M530 774V742"></path>
+          <path class="feather-demo__city-wall" d="M590 774V744"></path>
+          <path class="feather-demo__city-wall" d="M650 774V746"></path>
+          <path class="feather-demo__city-wall" d="M706 774V750"></path>
+
+          <path class="feather-demo__city-fill feather-demo__city-fill--tower" d="M756 774L796 308H844L886 774Z"></path>
+          <path class="feather-demo__city-line" d="M756 774L796 308H844L886 774"></path>
+          <path class="feather-demo__city-line" d="M774 706H868"></path>
+          <path class="feather-demo__city-line" d="M780 648H862"></path>
+          <path class="feather-demo__city-line" d="M786 590H856"></path>
+          <path class="feather-demo__city-line" d="M792 528H850"></path>
+          <path class="feather-demo__city-line" d="M798 468H844"></path>
+          <path class="feather-demo__city-line" d="M804 410H838"></path>
+          <path class="feather-demo__city-accent" d="M820 256V308"></path>
+          <path class="feather-demo__city-accent" d="M810 274H830"></path>
+          <path class="feather-demo__city-accent" d="M808 244H832"></path>
+          <path class="feather-demo__city-accent" d="M812 226H828"></path>
+
+          <path class="feather-demo__city-fill" d="M944 774V670H1028V636H1128V670H1204V774Z"></path>
+          <path class="feather-demo__city-line" d="M944 774V670H1204V774"></path>
+          <path class="feather-demo__city-line" d="M928 672H1220"></path>
+          <path class="feather-demo__city-line" d="M956 638H1192"></path>
+          <path class="feather-demo__city-line" d="M970 614H1178"></path>
+          <path class="feather-demo__city-line" d="M986 592H1162"></path>
+          <path class="feather-demo__city-line" d="M1004 572H1144"></path>
+          <path class="feather-demo__city-line" d="M1022 552H1126"></path>
+          <path class="feather-demo__city-line" d="M1036 532H1112"></path>
+          <path class="feather-demo__city-line" d="M976 774V692"></path>
+          <path class="feather-demo__city-line" d="M1170 774V692"></path>
+          <path class="feather-demo__city-line" d="M1066 670V774"></path>
+          <path class="feather-demo__city-line" d="M1090 670V774"></path>
+          <path class="feather-demo__city-line" d="M1000 708H1148"></path>
+          <path class="feather-demo__city-line" d="M1016 682H1132"></path>
+          <path class="feather-demo__city-line" d="M1042 648H1106"></path>
+
+          <path class="feather-demo__city-line feather-demo__city-line--bridge" d="M1248 774C1260 704 1292 646 1340 606C1384 568 1436 548 1496 542"></path>
+          <path class="feather-demo__city-line feather-demo__city-line--bridge" d="M1384 774C1396 676 1436 604 1512 560"></path>
+          <path class="feather-demo__city-line feather-demo__city-line--bridge" d="M1220 774H1534"></path>
+          <path class="feather-demo__city-line feather-demo__city-line--bridge" d="M1272 774L1378 612"></path>
+          <path class="feather-demo__city-line feather-demo__city-line--bridge" d="M1306 774L1402 586"></path>
+          <path class="feather-demo__city-line feather-demo__city-line--bridge" d="M1344 774L1426 572"></path>
+          <path class="feather-demo__city-line feather-demo__city-line--bridge" d="M1380 774L1454 564"></path>
+          <path class="feather-demo__city-line feather-demo__city-line--bridge" d="M1418 774L1486 560"></path>
+          <path class="feather-demo__city-line feather-demo__city-line--bridge" d="M1452 774L1514 560"></path>
+          <path class="feather-demo__city-line feather-demo__city-line--bridge" d="M1248 774L1342 606"></path>
+          <path class="feather-demo__city-line feather-demo__city-line--bridge" d="M1496 542C1460 530 1428 532 1398 542"></path>
+          <path class="feather-demo__city-line feather-demo__city-line--bridge" d="M1342 606C1300 594 1268 602 1244 624"></path>
+
+          <path class="feather-demo__city-line feather-demo__city-line--soft" d="M82 774C258 744 404 740 560 758C704 774 860 776 1030 758C1194 742 1360 742 1518 760"></path>
+        </svg>
+      </div>
+
+      <div class="feather-demo__layer feather-demo__layer--front" data-depth="0.64" data-layer="front">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="none" role="presentation">
+          <path
+            class="feather-demo__front-mist"
+            d="M0 692C180 666 346 668 492 694C638 720 780 724 928 706C1080 688 1238 690 1410 716C1488 728 1552 742 1600 756V900H0V692Z"
+          ></path>
+          <path
+            class="feather-demo__front-mist feather-demo__front-mist--soft"
+            d="M0 754C162 734 310 736 438 760C594 790 768 796 938 776C1108 756 1272 754 1440 778C1508 790 1562 802 1600 814V900H0V754Z"
+          ></path>
+          <path class="feather-demo__reed" d="M110 900C124 850 142 808 164 742"></path>
+          <path class="feather-demo__reed" d="M152 900C166 846 186 794 214 722"></path>
+          <path class="feather-demo__reed" d="M1440 900C1424 846 1408 800 1384 730"></path>
+          <path class="feather-demo__reed" d="M1400 900C1382 844 1360 792 1332 714"></path>
+        </svg>
+      </div>
+
+      <div class="feather-demo__shadow" data-feather-shadow></div>
+
+      <div class="feather-demo__feather" data-feather>
+        <svg viewBox="0 0 180 360" role="presentation" aria-hidden="true">
+          <defs>
+            <linearGradient id="feather-demo-feather-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"></stop>
+              <stop offset="52%" stop-color="#f5fbff"></stop>
+              <stop offset="100%" stop-color="#dbe7f2"></stop>
+            </linearGradient>
+            <linearGradient id="feather-demo-feather-rib" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#7e95a6"></stop>
+              <stop offset="100%" stop-color="#dbe6ef"></stop>
+            </linearGradient>
+          </defs>
+          <path
+            class="feather-demo__feather-fill"
+            d="M92 20C138 70 148 164 112 266C98 308 84 328 72 334C62 340 54 334 50 318C30 242 24 182 34 124C42 80 62 42 92 20Z"
+          ></path>
+          <path
+            class="feather-demo__feather-fill feather-demo__feather-fill--shade"
+            d="M92 20C72 80 72 164 90 286C84 314 76 328 68 332C62 334 58 330 56 320C34 238 28 180 36 124C42 80 62 42 92 20Z"
+          ></path>
+          <path class="feather-demo__feather-rib" d="M94 22C90 122 84 226 72 334"></path>
+          <path class="feather-demo__feather-barb" d="M88 58C66 74 54 90 42 116"></path>
+          <path class="feather-demo__feather-barb" d="M90 92C60 112 44 136 32 166"></path>
+          <path class="feather-demo__feather-barb" d="M90 126C58 150 42 178 32 210"></path>
+          <path class="feather-demo__feather-barb" d="M88 164C58 186 44 212 36 242"></path>
+          <path class="feather-demo__feather-barb" d="M98 68C122 84 136 102 150 132"></path>
+          <path class="feather-demo__feather-barb" d="M98 108C130 128 146 152 156 180"></path>
+          <path class="feather-demo__feather-barb" d="M96 148C126 166 142 190 152 218"></path>
+          <path class="feather-demo__feather-barb" d="M92 190C120 206 134 226 144 248"></path>
+        </svg>
+      </div>
+    </div>
+
+    <div class="feather-demo__vignette"></div>
+  </div>
+
+  <script is:inline>
+    const root = document.querySelector("[data-feather-demo]");
+
+    if (root) {
+      const stage = root.querySelector("[data-feather-stage]");
+      const world = root.querySelector("[data-feather-world]");
+      const feather = root.querySelector("[data-feather]");
+      const shadow = root.querySelector("[data-feather-shadow]");
+      const layers = Array.from(root.querySelectorAll("[data-depth]"));
+      const sunHalo = root.querySelector(".feather-demo__sun-halo");
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const state = {
+        start: performance.now(),
+        panX: 0,
+        panY: 0,
+        targetX: 0,
+        targetY: 0,
+      };
+      const introDuration = 9800;
+
+      const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+      const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+      const easeInOutSine = (t) => -(Math.cos(Math.PI * t) - 1) / 2;
+      const mapProgress = (value, start, end) => clamp((value - start) / (end - start), 0, 1);
+
+      const introPosition = (t, width, height) => {
+        if (t < 0.34) {
+          const skyT = t / 0.34;
+          return {
+            x: width * (0.14 + 0.56 * skyT) + Math.sin(t * Math.PI * 6.8) * 24,
+            y: height * (0.18 + Math.sin(t * Math.PI * 3.2 + 0.4) * 0.028),
+            rotate: -18 + Math.sin(t * Math.PI * 7.4 + 0.8) * 10,
+            scale: 0.74 + skyT * 0.07,
+          };
+        }
+
+        if (t < 0.82) {
+          const gustT = mapProgress(t, 0.34, 0.82);
+          const arc = easeInOutSine(gustT);
+          return {
+            x:
+              width * (0.70 - 0.3 * arc) +
+              Math.sin(gustT * Math.PI * 5.8 + 0.2) * (22 - gustT * 8),
+            y:
+              height * (0.2 + 0.42 * easeOutCubic(gustT)) +
+              Math.cos(gustT * Math.PI * 7.2) * (18 - gustT * 10),
+            rotate: -6 + Math.sin(gustT * Math.PI * 8.8 + 0.9) * 15,
+            scale: 0.81 + gustT * 0.13,
+          };
+        }
+
+        const settleT = mapProgress(t, 0.82, 1);
+        return {
+          x: width * (0.4 + settleT * 0.04) + Math.sin(settleT * Math.PI * 5.2) * 8,
+          y: height * (0.62 + settleT * 0.05) + Math.cos(settleT * Math.PI * 4.4) * 7,
+          rotate: 6 + Math.sin(settleT * Math.PI * 4.8 + 0.6) * 6,
+          scale: 0.94 + settleT * 0.05,
+        };
+      };
+
+      const restingPosition = (time, width, height) => {
+        const x = width * 0.44 + Math.sin(time * 0.00052) * 15 + Math.cos(time * 0.0011) * 5;
+        const y = height * 0.67 + Math.cos(time * 0.00068) * 11 + Math.sin(time * 0.0014) * 4;
+        const rotate = 4 + Math.sin(time * 0.001) * 5 + Math.cos(time * 0.0006) * 2;
+        return { x, y, rotate, scale: 0.99 };
+      };
+
+      stage.addEventListener("pointermove", (event) => {
+        const rect = stage.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        state.targetX = clamp(x, -0.5, 0.5);
+        state.targetY = clamp(y, -0.5, 0.5);
+      });
+
+      stage.addEventListener("pointerleave", () => {
+        state.targetX = 0;
+        state.targetY = 0;
+      });
+
+      const render = (time) => {
+        const reduced = prefersReducedMotion.matches;
+        const rect = stage.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const elapsed = time - state.start;
+        const progress = reduced ? 1 : clamp(elapsed / introDuration, 0, 1);
+        const inIntro = !reduced && progress < 1;
+        const cityProgress = reduced ? 1 : easeOutCubic(mapProgress(progress, 0.32, 0.82));
+
+        state.panX += (state.targetX - state.panX) * 0.055;
+        state.panY += (state.targetY - state.panY) * 0.055;
+
+        const position = inIntro ? introPosition(progress, width, height) : restingPosition(time, width, height);
+        const worldTranslateX = state.panX * 20;
+        const worldTranslateY = state.panY * 12;
+        const worldScale = 1.01 + cityProgress * 0.016;
+
+        world.style.transform = `translate3d(${worldTranslateX.toFixed(2)}px, ${worldTranslateY.toFixed(2)}px, 0) scale(${worldScale.toFixed(4)})`;
+
+        if (sunHalo) {
+          sunHalo.style.opacity = (0.82 - cityProgress * 0.62).toFixed(3);
+          sunHalo.style.transform = `translate3d(${(state.panX * 12).toFixed(2)}px, ${(state.panY * 7).toFixed(2)}px, 0) scale(${(1 + progress * 0.06).toFixed(4)})`;
+        }
+
+        for (const layer of layers) {
+          const depth = Number(layer.dataset.depth || 0);
+          const layerName = layer.dataset.layer || "";
+          const layerX = state.panX * depth * 70;
+          const layerY = state.panY * depth * 36;
+          let revealY = 0;
+          let revealScale = 1;
+          let opacity = 1;
+
+          if (layerName === "far") {
+            opacity = 0.28 + cityProgress * 0.42;
+            revealY = (1 - cityProgress) * 18;
+          } else if (layerName === "city") {
+            opacity = cityProgress;
+            revealY = (1 - cityProgress) * 180;
+            revealScale = 0.86 + cityProgress * 0.14;
+          } else if (layerName === "front") {
+            opacity = cityProgress * 0.86;
+            revealY = (1 - cityProgress) * 96;
+            revealScale = 0.92 + cityProgress * 0.08;
+          }
+
+          layer.style.opacity = opacity.toFixed(3);
+          layer.style.transform = `translate3d(${layerX.toFixed(2)}px, ${(layerY + revealY).toFixed(2)}px, 0) scale(${revealScale.toFixed(4)})`;
+        }
+
+        const featherX = position.x + state.panX * 18;
+        const featherY = position.y + state.panY * 12;
+        feather.style.transform = `translate3d(${featherX.toFixed(2)}px, ${featherY.toFixed(2)}px, 0) rotate(${position.rotate.toFixed(2)}deg) scale(${position.scale.toFixed(4)})`;
+        feather.style.opacity = (0.18 + progress * 0.82).toFixed(3);
+
+        const shadowLift = clamp(mapProgress(position.y / height, 0.26, 0.82), 0, 1);
+        const shadowX = featherX - 4;
+        const shadowY = height * 0.79 + Math.max(-22, Math.min(18, (position.y - height * 0.62) * 0.1));
+        const shadowScaleX = 0.58 + shadowLift * 0.42;
+        const shadowScaleY = 0.18 + shadowLift * 0.08;
+        shadow.style.transform = `translate3d(${shadowX.toFixed(2)}px, ${shadowY.toFixed(2)}px, 0) scale(${shadowScaleX.toFixed(3)}, ${shadowScaleY.toFixed(3)})`;
+        shadow.style.opacity = (shadowLift * 0.22).toFixed(3);
+
+        root.dataset.phase = inIntro ? "intro" : "settled";
+        root.style.setProperty("--demo-progress", progress.toFixed(3));
+        root.style.setProperty("--city-progress", cityProgress.toFixed(3));
+
+        window.requestAnimationFrame(render);
+      };
+
+      window.requestAnimationFrame(render);
+    }
+  </script>
+
+  <style>
+    .feather-demo {
+      --demo-progress: 0;
+      --city-progress: 0;
+      position: relative;
+      min-height: 100svh;
+      overflow: clip;
+      background: linear-gradient(180deg, #84c4f3 0%, #acd7f4 44%, #e7f3fb 100%);
+      color: #0f2437;
+      isolation: isolate;
+    }
+
+    .feather-demo__stage,
+    .feather-demo__world,
+    .feather-demo__layer,
+    .feather-demo__vignette {
+      position: absolute;
+      inset: 0;
+    }
+
+    .feather-demo__stage {
+      overflow: clip;
+    }
+
+    .feather-demo__world {
+      will-change: transform;
+      transform-origin: center center;
+    }
+
+    .feather-demo__back {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      z-index: 4;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 36, 55, 0.12);
+      background: rgba(247, 252, 255, 0.74);
+      backdrop-filter: blur(14px);
+      color: rgba(15, 36, 55, 0.78);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .feather-demo__back:hover,
+    .feather-demo__back:focus-visible {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .feather-demo__sun-halo,
+    .feather-demo__cloud,
+    .feather-demo__shadow,
+    .feather-demo__feather,
+    .feather-demo__particles {
+      position: absolute;
+    }
+
+    .feather-demo__sun-halo {
+      width: clamp(14rem, 24vw, 22rem);
+      aspect-ratio: 1;
+      top: 8%;
+      right: 14%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 244, 204, 0.85) 0%, rgba(255, 244, 204, 0.34) 34%, rgba(255, 244, 204, 0.08) 66%, transparent 72%);
+      filter: blur(0.2rem);
+      opacity: 0.82;
+      animation: featherDemoSunPulse 10s ease-in-out infinite;
+      pointer-events: none;
+      will-change: transform, opacity;
+    }
+
+    .feather-demo__cloud {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.38);
+      filter: blur(0.8px);
+      opacity: 0.72;
+      pointer-events: none;
+    }
+
+    .feather-demo__cloud--one {
+      top: 14%;
+      left: 6%;
+      width: 20rem;
+      height: 4.8rem;
+      animation: featherDemoCloudFloat 16s ease-in-out infinite;
+    }
+
+    .feather-demo__cloud--two {
+      top: 22%;
+      right: 8%;
+      width: 13rem;
+      height: 3.8rem;
+      opacity: 0.6;
+      animation: featherDemoCloudFloat 20s ease-in-out infinite reverse;
+    }
+
+    .feather-demo__cloud--three {
+      top: 30%;
+      left: 28%;
+      width: 15rem;
+      height: 3.2rem;
+      opacity: 0.46;
+      animation: featherDemoCloudFloat 22s ease-in-out infinite;
+    }
+
+    .feather-demo__cloud--four {
+      top: 10%;
+      left: 48%;
+      width: 10rem;
+      height: 2.8rem;
+      opacity: 0.38;
+      animation: featherDemoCloudFloat 18s ease-in-out infinite reverse;
+    }
+
+    .feather-demo__particles {
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .feather-demo__particles span {
+      position: absolute;
+      width: 0.34rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.46);
+      box-shadow: 0 0 0.8rem rgba(255, 255, 255, 0.22);
+      animation: featherDemoParticle 8s linear infinite;
+    }
+
+    .feather-demo__particles span:nth-child(1) {
+      top: 18%;
+      left: 24%;
+      animation-duration: 10s;
+      animation-delay: -2s;
+    }
+
+    .feather-demo__particles span:nth-child(2) {
+      top: 26%;
+      left: 60%;
+      width: 0.28rem;
+      animation-duration: 9s;
+      animation-delay: -5s;
+    }
+
+    .feather-demo__particles span:nth-child(3) {
+      top: 34%;
+      left: 16%;
+      width: 0.24rem;
+      animation-duration: 12s;
+      animation-delay: -6s;
+    }
+
+    .feather-demo__particles span:nth-child(4) {
+      top: 40%;
+      left: 76%;
+      animation-duration: 11s;
+      animation-delay: -1s;
+    }
+
+    .feather-demo__particles span:nth-child(5) {
+      top: 52%;
+      left: 52%;
+      width: 0.22rem;
+      animation-duration: 14s;
+      animation-delay: -8s;
+    }
+
+    .feather-demo__particles span:nth-child(6) {
+      top: 62%;
+      left: 12%;
+      width: 0.25rem;
+      animation-duration: 13s;
+      animation-delay: -3s;
+    }
+
+    .feather-demo__particles span:nth-child(7) {
+      top: 66%;
+      left: 84%;
+      width: 0.28rem;
+      animation-duration: 10.5s;
+      animation-delay: -7s;
+    }
+
+    .feather-demo__particles span:nth-child(8) {
+      top: 72%;
+      left: 36%;
+      width: 0.2rem;
+      animation-duration: 9.5s;
+      animation-delay: -4s;
+    }
+
+    .feather-demo__layer {
+      will-change: transform, opacity;
+      transform-origin: center bottom;
+      pointer-events: none;
+    }
+
+    .feather-demo__layer svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .feather-demo__sky-glow {
+      fill: rgba(255, 255, 255, 0.18);
+    }
+
+    .feather-demo__river-band {
+      fill: rgba(240, 248, 255, 0.28);
+      filter: blur(1px);
+    }
+
+    .feather-demo__river-line {
+      fill: none;
+      stroke: rgba(208, 229, 243, 0.7);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .feather-demo__city-ground,
+    .feather-demo__city-line,
+    .feather-demo__city-accent,
+    .feather-demo__city-wall,
+    .feather-demo__front-mist,
+    .feather-demo__reed {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .feather-demo__city-ground,
+    .feather-demo__city-line,
+    .feather-demo__city-wall {
+      stroke: rgba(20, 39, 55, 0.88);
+      stroke-width: 3.2;
+    }
+
+    .feather-demo__city-ground--soft {
+      stroke: rgba(82, 108, 130, 0.34);
+      stroke-width: 2;
+    }
+
+    .feather-demo__city-line--soft {
+      stroke: rgba(96, 124, 148, 0.42);
+      stroke-width: 2.2;
+    }
+
+    .feather-demo__city-line--bridge {
+      stroke-width: 3;
+    }
+
+    .feather-demo__city-accent {
+      stroke: rgba(214, 172, 72, 0.84);
+      stroke-width: 3.2;
+    }
+
+    .feather-demo__city-fill {
+      fill: rgba(255, 255, 255, 0.1);
+      filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.14));
+    }
+
+    .feather-demo__city-fill--tower {
+      fill: rgba(248, 251, 255, 0.16);
+    }
+
+    .feather-demo__front-mist {
+      stroke: rgba(236, 245, 252, 0.54);
+      stroke-width: 26;
+      filter: blur(3px);
+    }
+
+    .feather-demo__front-mist--soft {
+      stroke-width: 36;
+      opacity: 0.82;
+    }
+
+    .feather-demo__reed {
+      stroke: rgba(133, 163, 185, 0.3);
+      stroke-width: 4;
+      filter: blur(0.2px);
+    }
+
+    .feather-demo__shadow {
+      left: 0;
+      top: 0;
+      width: 9rem;
+      height: 2.3rem;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(44, 78, 104, 0.22) 0%, rgba(44, 78, 104, 0) 72%);
+      transform-origin: center;
+      pointer-events: none;
+      opacity: 0;
+      mix-blend-mode: multiply;
+      will-change: transform, opacity;
+    }
+
+    .feather-demo__feather {
+      left: 0;
+      top: 0;
+      width: clamp(4rem, 5.6vw, 5.8rem);
+      pointer-events: none;
+      opacity: 0.18;
+      will-change: transform, opacity;
+      transform-origin: center center;
+      filter: drop-shadow(0 0.5rem 0.8rem rgba(59, 93, 120, 0.12));
+    }
+
+    .feather-demo__feather svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+
+    .feather-demo__feather-fill {
+      fill: url(#feather-demo-feather-fill);
+    }
+
+    .feather-demo__feather-fill--shade {
+      fill: rgba(211, 225, 237, 0.78);
+      mix-blend-mode: multiply;
+    }
+
+    .feather-demo__feather-rib,
+    .feather-demo__feather-barb {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .feather-demo__feather-rib {
+      stroke: url(#feather-demo-feather-rib);
+      stroke-width: 4;
+    }
+
+    .feather-demo__feather-barb {
+      stroke: rgba(222, 235, 245, 0.96);
+      stroke-width: 3.2;
+    }
+
+    .feather-demo__vignette {
+      background:
+        radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0) 42%, rgba(120, 162, 195, 0.12) 82%, rgba(53, 88, 112, 0.18) 100%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, rgba(242, 248, 252, 0.4) 100%);
+      pointer-events: none;
+    }
+
+    @keyframes featherDemoCloudFloat {
+      0%,
+      100% {
+        transform: translateX(0) translateY(0);
+      }
+
+      50% {
+        transform: translateX(2rem) translateY(-0.5rem);
+      }
+    }
+
+    @keyframes featherDemoParticle {
+      0% {
+        transform: translate3d(0, 0, 0) scale(0.8);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.58;
+      }
+
+      100% {
+        transform: translate3d(2rem, 5rem, 0) scale(1.1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes featherDemoSunPulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.04);
+      }
+    }
+
+    @media (max-width: 780px) {
+      .feather-demo__back {
+        top: 0.9rem;
+        left: 0.9rem;
+      }
+
+      .feather-demo__sun-halo {
+        right: 8%;
+      }
+
+      .feather-demo__feather {
+        width: clamp(3.8rem, 11vw, 5rem);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .feather-demo__sun-halo,
+      .feather-demo__cloud,
+      .feather-demo__particles span {
+        animation: none !important;
+      }
+    }
+  </style>
+</section>

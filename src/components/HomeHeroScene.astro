@@ -1,0 +1,200 @@
+<section class="home-hero" data-home-hero aria-labelledby="home-hero-title">
+  <div class="home-hero__canvas" aria-hidden="true">
+    <svg
+      class="home-hero__artwork"
+      viewBox="0 0 1600 1080"
+      preserveAspectRatio="xMidYMid slice"
+      role="presentation"
+    >
+      <defs>
+        <linearGradient id="homeSkyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#f8f3ea"></stop>
+          <stop offset="42%" stop-color="#d7e4e8"></stop>
+          <stop offset="100%" stop-color="#c7d5db"></stop>
+        </linearGradient>
+        <linearGradient id="homeGroundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#dde5df"></stop>
+          <stop offset="100%" stop-color="#c7d0ce"></stop>
+        </linearGradient>
+        <linearGradient id="homeInkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0f2432"></stop>
+          <stop offset="100%" stop-color="#2c4657"></stop>
+        </linearGradient>
+        <linearGradient id="homeGoldLine" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#d8aa4f"></stop>
+          <stop offset="100%" stop-color="#f1d7a0"></stop>
+        </linearGradient>
+        <radialGradient id="homeSunGradient" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff0c7" stop-opacity="0.98"></stop>
+          <stop offset="46%" stop-color="#f1cf89" stop-opacity="0.84"></stop>
+          <stop offset="100%" stop-color="#f1cf89" stop-opacity="0"></stop>
+        </radialGradient>
+        <linearGradient id="homeMistGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#f8f6f0" stop-opacity="0.94"></stop>
+          <stop offset="50%" stop-color="#e7eef0" stop-opacity="0.88"></stop>
+          <stop offset="100%" stop-color="#f8f6f0" stop-opacity="0.94"></stop>
+        </linearGradient>
+        <filter id="homeBlur" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="16"></feGaussianBlur>
+        </filter>
+        <filter id="homeGlow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="6" result="blur"></feGaussianBlur>
+          <feMerge>
+            <feMergeNode in="blur"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <rect class="home-hero__skyfill" width="1600" height="1080"></rect>
+
+      <g class="home-hero__art-layer home-hero__art-layer--back">
+        <ellipse class="home-hero__sun-glow" cx="804" cy="304" rx="250" ry="250"></ellipse>
+        <circle class="home-hero__sun" cx="804" cy="304" r="64"></circle>
+        <path
+          class="home-hero__haze home-hero__haze--back"
+          d="M72 468C206 430 352 430 484 454C626 480 748 450 870 420C1010 386 1186 394 1372 450C1462 478 1534 516 1600 548V736H0V570C36 532 52 490 72 468Z"
+        ></path>
+        <path
+          class="home-hero__haze home-hero__haze--ridge"
+          d="M0 592C118 560 274 550 408 582C534 612 634 590 756 556C902 516 1070 512 1230 560C1374 602 1496 644 1600 694V846H0V592Z"
+        ></path>
+      </g>
+
+      <g class="home-hero__art-layer home-hero__art-layer--campus">
+        <path
+          class="home-hero__terrain"
+          d="M0 770C156 742 312 720 430 736C552 752 668 736 768 708C904 670 1042 662 1188 710C1338 760 1468 796 1600 820V1080H0V770Z"
+        ></path>
+        <path
+          class="home-hero__terrace"
+          d="M0 824C134 798 298 792 448 818C612 846 730 844 880 806C1030 768 1180 774 1344 826C1440 856 1526 888 1600 922V1080H0V824Z"
+        ></path>
+
+        <g class="home-hero__campus-fill">
+          <path class="home-hero__building-mass" d="M254 644H380V776H226V742C226 694 232 668 254 644Z"></path>
+          <path class="home-hero__building-mass" d="M388 610H476V772H362V640C362 624 372 616 388 610Z"></path>
+          <path class="home-hero__building-mass" d="M556 622H682V780H520V666C520 644 530 632 556 622Z"></path>
+          <path class="home-hero__building-mass" d="M748 574H880V784H716V628C716 604 724 590 748 574Z"></path>
+          <path class="home-hero__building-mass" d="M944 618H1098V792H916V666C916 640 922 628 944 618Z"></path>
+          <path class="home-hero__building-mass" d="M1128 650H1272V804H1094V692C1094 672 1108 658 1128 650Z"></path>
+        </g>
+
+        <g class="home-hero__campus-lines">
+          <path class="home-hero__campus-line" d="M204 786H1336"></path>
+          <path class="home-hero__campus-line" d="M244 650H382V776H226"></path>
+          <path class="home-hero__campus-line" d="M264 650V720"></path>
+          <path class="home-hero__campus-line" d="M300 650V734"></path>
+          <path class="home-hero__campus-line" d="M336 650V722"></path>
+          <path class="home-hero__campus-line" d="M396 612H476V770H362"></path>
+          <path class="home-hero__campus-line" d="M420 612V748"></path>
+          <path class="home-hero__campus-line" d="M444 612V748"></path>
+          <path class="home-hero__campus-accent" d="M448 582L448 610"></path>
+          <path class="home-hero__campus-line" d="M554 624H682V780H520"></path>
+          <path class="home-hero__campus-line" d="M574 624V748"></path>
+          <path class="home-hero__campus-line" d="M614 624V760"></path>
+          <path class="home-hero__campus-line" d="M652 624V738"></path>
+          <path class="home-hero__campus-line" d="M744 578H882V784H716"></path>
+          <path class="home-hero__campus-line" d="M770 578V756"></path>
+          <path class="home-hero__campus-line" d="M806 578V770"></path>
+          <path class="home-hero__campus-line" d="M842 578V748"></path>
+          <path class="home-hero__campus-line" d="M820 528V578"></path>
+          <path class="home-hero__campus-accent" d="M820 500V528"></path>
+          <path class="home-hero__campus-line" d="M944 620H1100V792H916"></path>
+          <path class="home-hero__campus-line" d="M974 620V762"></path>
+          <path class="home-hero__campus-line" d="M1014 620V754"></path>
+          <path class="home-hero__campus-line" d="M1054 620V770"></path>
+          <path class="home-hero__campus-line" d="M1128 652H1274V804H1092"></path>
+          <path class="home-hero__campus-line" d="M1162 652V778"></path>
+          <path class="home-hero__campus-line" d="M1204 652V778"></path>
+          <path class="home-hero__campus-line" d="M1242 652V786"></path>
+          <path
+            class="home-hero__campus-line"
+            d="M286 820C358 804 454 798 528 812C634 832 700 844 810 828C936 808 1054 790 1182 810C1238 818 1290 832 1340 850"
+          ></path>
+          <path
+            class="home-hero__path-line"
+            d="M388 852C470 836 580 832 680 846C812 864 928 860 1030 838C1112 820 1190 818 1270 832"
+          ></path>
+          <path
+            class="home-hero__path-line"
+            d="M178 874C278 850 392 848 498 866C612 886 716 892 836 878C964 864 1094 854 1218 872"
+          ></path>
+        </g>
+
+        <g class="home-hero__tree-line">
+          <circle class="home-hero__tree" cx="236" cy="754" r="22"></circle>
+          <circle class="home-hero__tree" cx="284" cy="746" r="16"></circle>
+          <circle class="home-hero__tree" cx="522" cy="758" r="22"></circle>
+          <circle class="home-hero__tree" cx="576" cy="748" r="18"></circle>
+          <circle class="home-hero__tree" cx="688" cy="752" r="14"></circle>
+          <circle class="home-hero__tree" cx="904" cy="760" r="20"></circle>
+          <circle class="home-hero__tree" cx="964" cy="752" r="16"></circle>
+          <circle class="home-hero__tree" cx="1108" cy="768" r="18"></circle>
+          <circle class="home-hero__tree" cx="1276" cy="778" r="20"></circle>
+        </g>
+      </g>
+
+      <g class="home-hero__art-layer home-hero__art-layer--mist">
+        <path
+          class="home-hero__haze home-hero__haze--front"
+          d="M0 636C122 620 262 628 388 664C516 700 642 712 770 688C906 662 1032 652 1186 676C1338 700 1462 734 1600 782V914H0V636Z"
+        ></path>
+        <path
+          class="home-hero__haze home-hero__haze--low"
+          d="M0 760C146 742 270 750 388 784C520 822 662 832 820 808C972 784 1112 778 1268 804C1404 826 1502 848 1600 890V1022H0V760Z"
+        ></path>
+      </g>
+
+      <g class="home-hero__art-layer home-hero__art-layer--cloud home-hero__art-layer--cloud-left">
+        <g class="home-hero__cloudbank home-hero__cloudbank--left">
+          <path
+            class="home-hero__cloudshape"
+            d="M-48 322C34 252 178 220 290 254C322 182 400 146 470 154C538 162 598 208 616 266C692 252 768 284 804 346C850 424 814 538 724 594C662 632 598 646 524 646H-48V322Z"
+          ></path>
+          <path
+            class="home-hero__clouddetail"
+            d="M86 334C162 286 280 276 362 314C426 344 470 396 488 456C414 442 354 448 288 478C212 512 148 562 96 624H-48V394C-20 372 28 348 86 334Z"
+          ></path>
+        </g>
+      </g>
+
+      <g class="home-hero__art-layer home-hero__art-layer--cloud home-hero__art-layer--cloud-right">
+        <g class="home-hero__cloudbank home-hero__cloudbank--right">
+          <path
+            class="home-hero__cloudshape"
+            d="M1648 326C1566 252 1420 220 1310 254C1278 188 1200 150 1130 156C1060 162 998 206 980 270C906 256 828 284 792 344C744 426 784 540 874 596C936 634 1002 648 1076 648H1648V326Z"
+          ></path>
+          <path
+            class="home-hero__clouddetail"
+            d="M1520 336C1442 286 1326 276 1244 316C1180 348 1134 402 1118 462C1192 446 1252 450 1318 480C1394 514 1458 562 1506 626H1648V398C1622 376 1578 350 1520 336Z"
+          ></path>
+        </g>
+      </g>
+
+      <g class="home-hero__art-layer home-hero__art-layer--cloud home-hero__art-layer--cloud-front">
+        <g class="home-hero__cloudbank home-hero__cloudbank--front">
+          <path
+            class="home-hero__cloudshape"
+            d="M300 326C382 260 514 238 614 270C662 190 758 152 846 168C934 184 1006 244 1030 320C1118 300 1214 326 1266 396C1328 482 1302 598 1196 654C1132 688 1062 700 972 700H430C364 700 324 678 290 642C240 590 228 510 262 444C276 406 292 364 300 326Z"
+          ></path>
+          <path
+            class="home-hero__clouddetail"
+            d="M476 352C552 310 660 304 742 334C816 362 872 418 896 484C836 470 770 468 700 492C614 520 540 572 476 648H366C340 622 320 596 306 570C278 520 286 452 332 408C366 376 420 362 476 352Z"
+          ></path>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="home-hero__copy shell">
+    <p class="home-hero__eyebrow">Sunny Gong</p>
+    <h1 id="home-hero-title">An opening frame for Waterloo-shaped work.</h1>
+    <p class="home-hero__lede">
+      University of Waterloo atmosphere rendered in line, mist, and morning light. The projects, photos, and writing
+      begin below.
+    </p>
+  </div>
+
+  <a class="home-hero__scroll" href="#home-entry">Scroll to enter</a>
+</section>

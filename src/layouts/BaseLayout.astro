@@ -1,0 +1,70 @@
+---
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import "../styles/global.css";
+import { site } from "../data/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  pageClass?: string;
+}
+
+const {
+  title = site.title,
+  description = site.description,
+  image = site.heroImage,
+  pageClass = "",
+} = Astro.props;
+
+const pageTitle = title === site.title ? title : `${title} | ${site.name}`;
+const themeColor = "#101827";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content={themeColor} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+  </head>
+  <body class={pageClass}>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <div class="site-bg"></div>
+    <SiteHeader />
+    <main id="content">
+      <slot />
+    </main>
+    <SiteFooter />
+    <script is:inline>
+      const header = document.querySelector(".site-header");
+      const isHomePage = document.body.classList.contains("page-home");
+      const hero = isHomePage ? document.querySelector(".legacy-hero") : null;
+
+      if (header) {
+        const syncHeader = () => {
+          header.classList.toggle("site-header--scrolled", window.scrollY > 18);
+
+          if (isHomePage && hero) {
+            const threshold = Math.max(hero.getBoundingClientRect().height * 0.55, 120);
+            header.classList.toggle("site-header--hidden", window.scrollY < threshold);
+          } else {
+            header.classList.remove("site-header--hidden");
+          }
+        };
+
+        syncHeader();
+        window.addEventListener("scroll", syncHeader, { passive: true });
+        window.addEventListener("resize", syncHeader);
+      }
+    </script>
+  </body>
+</html>

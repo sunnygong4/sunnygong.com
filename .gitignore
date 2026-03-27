@@ -1,0 +1,5 @@
+﻿node_modules/
+dist/
+.astro/
+.vs/
+public/thumbs/
